@@ -5,7 +5,7 @@ var request = require('request');
 var async = require('async');
 var cors=require('cors');
 
-app.use(cors({origin: null}));
+app.use(cors({origin: '*'}));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');

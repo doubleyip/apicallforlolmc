@@ -63,7 +63,7 @@ app.get('/sumSearch', function(req, res) {
       info: json
 	  
     })*/
-	res.status(404).json(newjson);
+	res.status(200).json(newjson);
   });
 });
 

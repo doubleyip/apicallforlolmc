@@ -3,6 +3,9 @@ var app = express();
 var exphbs = require('express-handlebars');
 var request = require('request');
 var async = require('async');
+var cors=require('cors');
+
+app.use(cors({origin: null}));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
@@ -25,8 +28,6 @@ app.get('/sumSearch', function(req, res) {
           var json = JSON.parse(body);
 		  newjson=json
           callback(null, data);
-		  console.log(data.name);
-		  console.log(data.id);
         } else {
           console.log(err);
         }

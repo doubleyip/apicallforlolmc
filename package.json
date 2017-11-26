@@ -1,8 +1,18 @@
 {
-  "name": "apicallforlolmc",
+  "name": "nodejstest",
   "version": "1.0.0",
-  "description": "test for lolmc",
+  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "async": "^2.6.0",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "node": "^9.0.0",
+    "nodemon": "^1.12.1",
+    "npm": "^5.5.1",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "nodemon index.js"
   },
@@ -15,15 +25,5 @@
   "bugs": {
     "url": "https://github.com/doubleyip/apicallforlolmc/issues"
   },
-  "homepage": "https://github.com/doubleyip/apicallforlolmc#readme",
-  "dependencies": {
-    "async": "^2.6.0",
-    "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
-    "express-router": "0.0.1",
-    "nodemon": "^1.12.1",
-    "request": "^2.83.0",
-    "router-express": "^1.5.2"
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/doubleyip/apicallforlolmc#readme"
 }

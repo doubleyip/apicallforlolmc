@@ -189,5 +189,40 @@ app.get('/getLeague', function(req, res) {
   });
 });
 
+app.get('/getChamp', function(req, res) {
+  var data = {};
+  var server = 'na';
+  var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
+  var championID = req.query.champID;
+  var URL = 'https://na1.api.riotgames.com/lol/static-data/v3/champions/' + championID + '?locale=en_US&api_key=RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
+  console.log(URL);
+
+  async.waterfall([
+    function(callback) {
+      request(URL, function(err, response, body) {
+        if(!err && response.statusCode == 200) {
+          var json = JSON.parse(body);
+		  newjson=json
+          callback(null, data);
+        } else {
+          console.log(err);
+        }
+      });
+    }
+  ],
+  function(err, data) {
+    if(err) {
+      console.log(err);
+      return;
+    }
+
+    /*res.render('index', {
+      info: json
+	  
+    })*/
+	res.status(200).json(newjson);
+  });
+});
+
 var port = Number(process.env.PORT || 3000);
 app.listen(port);

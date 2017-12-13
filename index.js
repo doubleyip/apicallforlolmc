@@ -224,5 +224,37 @@ app.get('/getChamp', function(req, res) {
   });
 });
 
+app.get('/getChamppic', function(req, res) {
+  var data = {};
+  var URL = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';
+  console.log(URL);
+
+  async.waterfall([
+    function(callback) {
+      request(URL, function(err, response, body) {
+        if(!err && response.statusCode == 200) {
+          var json = JSON.parse(body);
+		  newjson=json
+          callback(null, data);
+        } else {
+          console.log(err);
+        }
+      });
+    }
+  ],
+  function(err, data) {
+    if(err) {
+      console.log(err);
+      return;
+    }
+
+    /*res.render('index', {
+      info: json
+	  
+    })*/
+	res.status(200).json(newjson);
+  });
+});
+
 var port = Number(process.env.PORT || 3000);
 app.listen(port);

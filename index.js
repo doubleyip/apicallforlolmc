@@ -5,7 +5,7 @@ var request = require('request');
 var async = require('async');
 var cors=require('cors');
 
-app.use(cors({origin: '*'}));
+app.use(cors({origin: '*'}));		//enable allow access origin control
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
@@ -13,8 +13,8 @@ app.get('/',function(req,res){
 	res.render('index');
 });
 
-app.get('/sumSearch', function(req, res) {
-  var data = {};
+app.get('/sumSearch', function(req, res) {	//call for summoner searching	
+  var data = {};				//?name="name you want to search"
   var server = 'na';
   var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var sumSearch = req.query.name;
@@ -41,15 +41,15 @@ app.get('/sumSearch', function(req, res) {
     }
 
     /*res.render('index', {
-      info: json
+      info: json			//retuurn the json
 	  
     })*/
 	res.status(200).json(newjson);
   });
 });
 
-app.get('/matchSearch', function(req, res) {
-  var data = {};
+app.get('/matchSearch', function(req, res) {		//api call to search for a match
+  var data = {};					//?id="id of match to search
   var server = 'na';
   var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var accountID = req.query.id;
@@ -83,8 +83,8 @@ app.get('/matchSearch', function(req, res) {
   });
 });
 
-app.get('/recentSearch', function(req, res) {
-  var data = {};
+app.get('/recentSearch', function(req, res) {		//search recent matches
+  var data = {};					//?rmatch="match to search"
   var server = 'na';
   var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var recentMatch = req.query.rmatch;
@@ -118,8 +118,8 @@ app.get('/recentSearch', function(req, res) {
   });
 });
 
-app.get('/getTimeline', function(req, res) {
-  var data = {};
+app.get('/getTimeline', function(req, res) {		//call to get timeline
+  var data = {};					//?rmatch="match you want to get timeline of"
   var server = 'na';
   var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var recentMatch = req.query.rmatch;
@@ -154,8 +154,8 @@ app.get('/getTimeline', function(req, res) {
 });
 
 
-app.get('/getLeague', function(req, res) {
-  var data = {};
+app.get('/getLeague', function(req, res) {		//api call to get league of player
+  var data = {};					//?id="id of player you want to get league of"
   var server = 'na';
   var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var sumID = req.query.id;
@@ -189,8 +189,8 @@ app.get('/getLeague', function(req, res) {
   });
 });
 
-app.get('/getChamp', function(req, res) {
-  var data = {};
+app.get('/getChamp', function(req, res) {		//api to get champ
+  var data = {};					//?champID="id of champ you want to search"
   var server = 'na';
   var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var championID = req.query.champID;
@@ -224,7 +224,7 @@ app.get('/getChamp', function(req, res) {
   });
 });
 
-app.get('/getChamppic', function(req, res) {
+app.get('/getChamppic', function(req, res) {	//api call to get champ icons
   var data = {};
   var URL = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';
   console.log(URL);

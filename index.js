@@ -41,7 +41,7 @@ app.get('/sumSearch', function(req, res) {	//call for summoner searching
     }
 
     /*res.render('index', {
-      info: json			//retuurn the json
+      info: json			//return the json
 	  
     })*/
 	res.status(200).json(newjson);

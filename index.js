@@ -9,6 +9,12 @@ var apiKey = 'RGAPI-93766d03-7e34-4b78-b4df-eba3f414757f';
 app.use(cors({origin: '*'}));		//enable allow access origin control
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.set('view engine', 'handlebars');
 app.get('/',function(req,res){
 	res.render('index');

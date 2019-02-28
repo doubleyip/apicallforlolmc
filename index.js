@@ -19,7 +19,7 @@ app.get('/sumSearch', function(req, res) {	//call for summoner searching
   var server = 'na';
   //var apiKey = 'RGAPI-93766d03-7e34-4b78-b4df-eba3f414757f';
   var sumSearch = req.query.name;
-  var URL = 'https://'+server+'1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + sumSearch + '?api_key=' + apiKey;
+  var URL = 'https://'+server+'1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + sumSearch + '?api_key=' + apiKey;
   console.log(URL);
 
   async.waterfall([

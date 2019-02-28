@@ -227,7 +227,7 @@ app.get('/getChamp', function(req, res) {		//api to get champ
 
 app.get('/getChamppic', function(req, res) {	//api call to get champ icons
   var data = {};
-  var URL = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';
+  var URL = 'https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';
   console.log(URL);
 
   async.waterfall([

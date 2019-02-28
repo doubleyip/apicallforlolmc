@@ -23,7 +23,6 @@ app.get('/',function(req,res){
 app.get('/sumSearch', function(req, res) {	//call for summoner searching	
   var data = {};				//?name="name you want to search"
   var server = 'na';
-  //var apiKey = 'RGAPI-93766d03-7e34-4b78-b4df-eba3f414757f';
   var sumSearch = req.query.name;
   var URL = 'https://'+server+'1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + sumSearch + '?api_key=' + apiKey;
   console.log(URL);
@@ -58,7 +57,6 @@ app.get('/sumSearch', function(req, res) {	//call for summoner searching
 app.get('/matchSearch', function(req, res) {		//api call to search for a match
   var data = {};					//?id="id of match to search
   var server = 'na';
-  //var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var accountID = req.query.id;
   var URL = 'https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/'+ accountID +'?api_key=' + apiKey;
   console.log(URL);
@@ -93,7 +91,6 @@ app.get('/matchSearch', function(req, res) {		//api call to search for a match
 app.get('/recentSearch', function(req, res) {		//search recent matches
   var data = {};					//?rmatch="match to search"
   var server = 'na';
-  //var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var recentMatch = req.query.rmatch;
   var URL = 'https://na1.api.riotgames.com/lol/match/v4/matches/' + recentMatch + '?api_key=' + apiKey;
   console.log(URL);
@@ -128,7 +125,6 @@ app.get('/recentSearch', function(req, res) {		//search recent matches
 app.get('/getTimeline', function(req, res) {		//call to get timeline
   var data = {};					//?rmatch="match you want to get timeline of"
   var server = 'na';
-  //var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var recentMatch = req.query.rmatch;
   var URL = 'https://na1.api.riotgames.com/lol/match/v4/timelines/by-match/' + recentMatch + '?api_key=' + apiKey;
   console.log(URL);
@@ -164,7 +160,6 @@ app.get('/getTimeline', function(req, res) {		//call to get timeline
 app.get('/getLeague', function(req, res) {		//api call to get league of player
   var data = {};					//?id="id of player you want to get league of"
   var server = 'na';
-  //var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var sumID = req.query.id;
   var URL = 'https://na1.api.riotgames.com/lol/league/v4/positions/by-summoner/' + sumID + '?api_key=' + apiKey;
   console.log(URL);
@@ -199,7 +194,6 @@ app.get('/getLeague', function(req, res) {		//api call to get league of player
 app.get('/getChamp', function(req, res) {		//api to get champ
   var data = {};					//?champID="id of champ you want to search"
   var server = 'na';
-  //var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var championID = req.query.champID;
   var URL = 'https://na1.api.riotgames.com/lol/static-data/v3/champions/' + championID + '?locale=en_US&'+'&api_key=' + apiKey;
   console.log(URL);

@@ -16,7 +16,7 @@ app.get('/',function(req,res){
 app.get('/sumSearch', function(req, res) {	//call for summoner searching	
   var data = {};				//?name="name you want to search"
   var server = 'na';
-  var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
+  var apiKey = 'RGAPI-93766d03-7e34-4b78-b4df-eba3f414757f';
   var sumSearch = req.query.name;
   var URL = 'https://'+server+'1.api.riotgames.com/lol/summoner/v3/summoners/by-name/' + sumSearch + '?api_key=' + apiKey;
   console.log(URL);

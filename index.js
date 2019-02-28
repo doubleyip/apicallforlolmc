@@ -54,7 +54,7 @@ app.get('/matchSearch', function(req, res) {		//api call to search for a match
   var server = 'na';
   //var apiKey = 'RGAPI-c16c2668-0913-4123-9416-113f700d30f0';
   var accountID = req.query.id;
-  var URL = 'https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/'+ accountID + '/recent'+'?api_key=' + apiKey;
+  var URL = 'https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/'+ accountID +'?api_key=' + apiKey;
   console.log(URL);
 
   async.waterfall([

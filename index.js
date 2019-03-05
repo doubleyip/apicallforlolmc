@@ -4,7 +4,7 @@ var exphbs = require('express-handlebars');
 var request = require('request');
 var async = require('async');
 var cors=require('cors');
-var apiKey = 'RGAPI-93766d03-7e34-4b78-b4df-eba3f414757f';
+var apiKey = 'RGAPI-5ebafcd2-9cc9-4779-b9f1-a6ec913f49a7';
 
 app.use(cors({origin: '*'}));		//enable allow access origin control
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));

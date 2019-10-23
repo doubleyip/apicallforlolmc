@@ -160,8 +160,9 @@ app.get('/getTimeline', function(req, res) {		//call to get timeline
 app.get('/getLeague', function(req, res) {		//api call to get league of player
   var data = {};					//?id="id of player you want to get league of"
   var server = 'na';
-  var sumID = req.query.id;
-  var URL = 'https://na1.api.riotgames.com/lol/league/v4/positions/by-summoner/' + sumID + '?api_key=' + apiKey;
+  var sumID = req.query.id;'
+  var URL = 'https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/' + sumID + '?api_key=' + apiKey;
+  //var URL = 'https://na1.api.riotgames.com/lol/league/v4/positions/by-summoner/' + sumID + '?api_key=' + apiKey;
   console.log(URL);
 
   async.waterfall([
